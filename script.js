@@ -4,7 +4,7 @@ const newCardShowCase = document.querySelector('.news-card-container');
 const searchButton = document.querySelector('#search-button');
 const searchBar = document.querySelector('#search-input');
 searchButton.addEventListener('click',()=>{
-    fetchData(searchBar.value)
+    fetchData(searchBar.value.toLowerCase())
 })
 window.addEventListener('load',()=>{
     fetchData('general');
