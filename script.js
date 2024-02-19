@@ -1,5 +1,5 @@
-const url = 'https://newsapi.org/v2/everything?q='
-const apiKey = 'f8236aad828146be83c4f380cd702a54'
+const url = 'https://gnews.io/api/v4/search?q='
+const apiKey = '4be73228bef17ac5e5e5bfc082a20c92'
 const newCardShowCase = document.querySelector('.news-card-container');
 const searchButton = document.querySelector('#search-button');
 const searchBar = document.querySelector('#search-input');
@@ -13,7 +13,7 @@ window.addEventListener('load',()=>{
 
 async function fetchData(query){
     try{
-    const response = await fetch(`${url}${query}&from=2024-01-19&sortBy=publishedAt&apiKey=${apiKey}`)
+    const response = await fetch(`${url}${query}&lang=en&country=in&max=10&apikey=${apiKey}`)
     const data = await response.json();
    
     displayNews(data.articles);
@@ -37,10 +37,10 @@ function displayNews(data){
         return;
     }
     data.forEach((news)=>{
-        if(news.urlToImage === null ){return}
+        if(news.image === null ){return}
         note += `
         <div class="news-card">
-                <img src="${news.urlToImage}" class="news-image" alt="mews-image">
+                <img src="${news.image}" class="news-image" alt="mews-image">
                 <div class="news-content-area">
 
                 <div class="content-wrapper">
