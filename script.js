@@ -19,7 +19,8 @@ async function fetchData(query){
     displayNews(data.articles);
     }
     catch(err){
-        alert(err);
+        newCardShowCase.innerHTML = ``
+        newCardShowCase.innerHTML='<h1 style="margin-top:2rem;font-weight:600;font-size:2rem;color:#EEEEEE;text-align:center;">No News Found</h1>'
     }
 
         
