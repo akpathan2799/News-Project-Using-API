@@ -19,8 +19,11 @@ async function fetchData(query){
     displayNews(data.articles);
     }
     catch(err){
-        alert("There's Something Error")
+        alert(err);
     }
+
+        
+    
 }
 
 
